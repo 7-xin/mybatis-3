@@ -31,6 +31,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
+ * XML <include /> 标签的转换器，
+ * 负责将 SQL 中的 <include /> 标签转换成对应的 <sql /> 的内容
+ *
  * @author Frank D. Martinez [mnesarco]
  */
 public class XMLIncludeTransformer {
@@ -43,10 +46,16 @@ public class XMLIncludeTransformer {
     this.builderAssistant = builderAssistant;
   }
 
+  /**
+   * 将 <include> 标签替换成 <sql />
+   * @param source
+   */
   public void applyIncludes(Node source) {
+    // variablesContext ，并将 configurationVariables 添加到其中
     Properties variablesContext = new Properties();
     Properties configurationVariables = configuration.getVariables();
     Optional.ofNullable(configurationVariables).ifPresent(variablesContext::putAll);
+    // 处理 <include />
     applyIncludes(source, variablesContext, false);
   }
 
