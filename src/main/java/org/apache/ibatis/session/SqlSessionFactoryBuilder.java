@@ -28,9 +28,10 @@ import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
 /**
  * Builds {@link SqlSession} instances.
  *
- * 初始化流程入口
- *
  * @author Clinton Begin
+ *
+ * todo 构建 sqlSessionFactory
+ * todo 初始化流程入口
  */
 public class SqlSessionFactoryBuilder {
 
@@ -47,7 +48,7 @@ public class SqlSessionFactoryBuilder {
   }
 
   /**
-   * 构建 sqlSessionFactory 对象
+   * todo 构建 sqlSessionFactory 对象
    *
    * @param reader  Reader 对象
    * @param environment environment 环境

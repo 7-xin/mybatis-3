@@ -153,6 +153,8 @@ public class Resources {
    * @param resource The resource to find
    * @return The resource
    * @throws java.io.IOException If the resource cannot be found or read
+   *
+   * todo 将类全限定名转化成 Resource 对象
    */
   public static Reader getResourceAsReader(String resource) throws IOException {
     Reader reader;
